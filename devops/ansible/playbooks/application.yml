@@ -55,7 +55,7 @@
 
     - name: Clone repository fresh
       git:
-        repo: https://github.com/011111111111111/ca22.git
+        repo: https://github.com/Jathin-Chetty/WardrobeManager.git
         dest: "{{ app_dir }}"
         version: main
         force: yes
