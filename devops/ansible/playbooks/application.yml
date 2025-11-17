@@ -80,8 +80,9 @@
         content: |
           NODE_ENV=production
           PORT={{ app_port }}
-          MONGODB_URL=mongodb://{{ hostvars[groups['db_servers'][0]]['ansible_default_ipv4']['address'] }}:27017/Digital_Wardrobe
-          DATABASE_URL=mongodb://{{ hostvars[groups['db_servers'][0]]['ansible_default_ipv4']['address'] }}:27017/Digital_Wardrobe
+          MONGODB_URL=DATABASE_URL=mongodb://{{ hostvars['db_server'].private_ip }}:27017/Digital_Wardrobe
+          MONGODB_URI=DATABASE_URL=mongodb://{{ hostvars['db_server'].private_ip }}:27017/Digital_Wardrobe
+          DATABASE_URL=DATABASE_URL=mongodb://{{ hostvars['db_server'].private_ip }}:27017/Digital_Wardrobe
           AWS_REGION=ap-south-1
           S3_BUCKET_NAME=digital-wardrobe-storage-1ab64305
           APP_URL=http://{{ ansible_host }}:{{ app_port }}
